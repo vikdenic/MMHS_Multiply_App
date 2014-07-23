@@ -10,16 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
                             
+    @IBOutlet weak var textField1: UITextField!
+    @IBOutlet weak var textField2: UITextField!
+
+    @IBOutlet weak var resultLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func onCalculateButtonPressed(sender: AnyObject)
+    {
+        var multiplicand = textField2.text.toInt()
+        var multiplier = textField1.text.toInt()
+
+        //safely unwrap optionals
+        if multiplicand && multiplier
+        {
+            var product = multiplicand! * multiplier!
+            resultLabel.text = "\(product)"
+        }
     }
-
-
 }
 
