@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         {
             var product = multiplicand! * multiplier!
             resultLabel.text = "\(product)"
+            //implement custom animation
             animate()
 
             //change background color
@@ -47,10 +48,12 @@ class ViewController: UIViewController {
         {
             resultLabel.text = "Cannot Calculate"
             myView.backgroundColor = UIColor.whiteColor()
+            //implement custom animation
             animate()
         }
     }
 
+    //custom animation for results label
     func animate()
     {
         var animation = CATransition()
