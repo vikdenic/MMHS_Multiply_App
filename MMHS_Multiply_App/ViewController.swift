@@ -17,6 +17,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var myView: UIView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,16 +38,20 @@ class ViewController: UIViewController {
             //change background color
             if product % 2 == 0
             {
-                myView.backgroundColor = UIColor.greenColor()
+//                myView.backgroundColor = UIColor.greenColor()
+                backgroundImageView.image = UIImage(named: "green_bg")
+
             }
             else{
-                myView.backgroundColor = UIColor.orangeColor()
+//                myView.backgroundColor = UIColor.orangeColor()
+                backgroundImageView.image = UIImage(named: "orange_bg")
             }
         }
         else
         {
             resultLabel.text = "Cannot Calculate"
-            myView.backgroundColor = UIColor.whiteColor()
+//            myView.backgroundColor = UIColor.whiteColor()
+            backgroundImageView.image = nil
             animate()
         }
     }
