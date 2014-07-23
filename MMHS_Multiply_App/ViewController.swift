@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField2: UITextField!
 
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var myView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,15 @@ class ViewController: UIViewController {
         {
             var product = multiplicand! * multiplier!
             resultLabel.text = "\(product)"
+
+            //change background color
+            if product % 2 == 0
+            {
+                myView.backgroundColor = UIColor.greenColor()
+            }
+            else{
+                myView.backgroundColor = UIColor.orangeColor()
+            }
         }
     }
 }

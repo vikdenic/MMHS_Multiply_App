@@ -64,6 +64,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="myView" destination="I1e-1M-7Gh" id="plr-iJ-XHg"/>
                         <outlet property="resultLabel" destination="EKg-Bg-LHW" id="wsV-Ch-Qhk"/>
                         <outlet property="textField1" destination="AJf-DG-pQo" id="JNV-N6-qFy"/>
                         <outlet property="textField2" destination="Upg-F8-itO" id="Agl-yI-MZM"/>
