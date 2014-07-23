@@ -7,6 +7,8 @@
 //
 
 import UIKit
+//import QuartzCore for animation
+import QuartzCore
 
 class ViewController: UIViewController {
                             
@@ -30,6 +32,7 @@ class ViewController: UIViewController {
         {
             var product = multiplicand! * multiplier!
             resultLabel.text = "\(product)"
+            animate()
 
             //change background color
             if product % 2 == 0
@@ -44,7 +47,16 @@ class ViewController: UIViewController {
         {
             resultLabel.text = "Cannot Calculate"
             myView.backgroundColor = UIColor.whiteColor()
+            animate()
         }
+    }
+
+    func animate()
+    {
+        var animation = CATransition()
+        animation.type = kCATransitionFade
+        animation.duration = 0.5
+        resultLabel.layer.addAnimation(animation, forKey: "kCATransitionFade")
     }
 }
 
