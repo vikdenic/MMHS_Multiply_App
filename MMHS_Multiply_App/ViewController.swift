@@ -40,6 +40,11 @@ class ViewController: UIViewController {
                 myView.backgroundColor = UIColor.orangeColor()
             }
         }
+        else
+        {
+            resultLabel.text = "Cannot Calculate"
+            myView.backgroundColor = UIColor.whiteColor()
+        }
     }
 }
 
