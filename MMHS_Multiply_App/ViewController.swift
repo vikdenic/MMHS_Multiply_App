@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         var multiplier = textField1.text.toInt()
 
         //safely unwrap optionals
-        if multiplicand && multiplier
+        if multiplicand != nil && multiplier != nil
         {
             var product = multiplicand! * multiplier!
             resultLabel.text = "\(product)"
