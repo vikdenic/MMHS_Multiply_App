@@ -7,10 +7,9 @@
 //
 
 import UIKit
-//import QuartzCore for animation
-import QuartzCore
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+{
                             
     @IBOutlet weak var textField1: UITextField!
     @IBOutlet weak var textField2: UITextField!
@@ -19,49 +18,47 @@ class ViewController: UIViewController {
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
     }
 
-    @IBAction func onCalculateButtonPressed(sender: AnyObject)
+    @IBAction func onCalculateButtonPressed(sender: UIButton)
     {
-        var multiplicand = textField2.text.toInt()
-        var multiplier = textField1.text.toInt()
+        let multiplicand = textField2.text.toInt()
+        let multiplier = textField1.text.toInt()
 
         //safely unwrap optionals
-        if multiplicand && multiplier
+        if multiplicand != nil && multiplier != nil
         {
             var product = multiplicand! * multiplier!
             resultLabel.text = "\(product)"
-            animate()
+            animateResultLabel()
 
             //change background color
             if product % 2 == 0
             {
-//                myView.backgroundColor = UIColor.greenColor()
                 backgroundImageView.image = UIImage(named: "green_bg")
-
             }
-            else{
-//                myView.backgroundColor = UIColor.orangeColor()
+            else
+            {
                 backgroundImageView.image = UIImage(named: "orange_bg")
             }
         }
         else
         {
             resultLabel.text = "Cannot Calculate"
-//            myView.backgroundColor = UIColor.whiteColor()
             backgroundImageView.image = nil
-            animate()
+            animateResultLabel()
         }
     }
 
-    func animate()
+    func animateResultLabel()
     {
-        var animation = CATransition()
-        animation.type = kCATransitionFade
-        animation.duration = 0.5
-        resultLabel.layer.addAnimation(animation, forKey: "kCATransitionFade")
+        resultLabel.alpha = 0
+        UIView.animateWithDuration(1, animations: {
+            self.resultLabel.alpha = 1
+        })
     }
 }
 
